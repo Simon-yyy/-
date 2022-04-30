@@ -1,5 +1,7 @@
 <template>
+	
   <view>
+		<my-search @click="gotosearch"></my-search>
  <view class="scroll-view-container">
 	 <!--左侧的滑动区域-->
 	 <scroll-view 	class="left-scroll-view"	scroll-y="true" :style="{height:wh+'px'}">
@@ -42,7 +44,7 @@
 		onLoad() {
 			//uni里面的API，可以动态获取屏幕可用高度
 			const sycInfo=uni.getSystemInfoSync()
-			this.wh=sycInfo.windowHeight
+			this.wh=sycInfo.windowHeight-50
 			this.getCateList()
 		},
 		methods:{
@@ -61,7 +63,14 @@
 				uni.navigateTo({
 					url:'/subpackage/goods_list/goods_list?cid'+item.cat_id
 				})
+			},
+			gotosearch(){
+				uni.navigateTo({
+					url:'/subpackage/search/search'
+				})
 			}
+			
+			
 		}
 		
   }

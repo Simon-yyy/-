@@ -58,7 +58,7 @@ s<template>
 		props: {
 			placeholder: {
 				type: String,
-				default: ""
+				default: "请输入搜索内容"
 			},
 			radius: {
 				type: [Number, String],
@@ -99,8 +99,8 @@ s<template>
 		},
 		data() {
 			return {
-				show: false,
-				showSync: false,
+				show: true,
+				showSync: true,
 				searchVal: ''
 			}
 		},
